@@ -1,0 +1,23 @@
+﻿<Window x:Class="PruebaPlantillas.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PruebaPlantillas"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <StackPanel Margin="10">
+        <ListBox SelectedItem="{Binding Path=PersonasActual}" ItemsSource="{Binding Path=Personas}" >
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Path=Nombre}"></TextBlock>
+                        <TextBlock>-</TextBlock>
+                        <TextBlock Text="{Binding Path=Edad}"></TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <TextBlock Margin="10" FontSize="30" FontWeight="Bold" Text="{Binding Path=PersonasActual.Nombre}"/>
+    </StackPanel>
+</Window>
